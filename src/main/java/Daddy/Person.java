@@ -1,5 +1,7 @@
 package Daddy;
 
+import asg.cliche.Command;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,5 +69,23 @@ public class Person extends Record {
                 ", phone='" + phones + '\'' +
                 '}';
     }
-}
 
+    @Override
+    public boolean contains(String str) {
+
+        String strLower = str.toLowerCase();
+        if (lastName.toLowerCase().contains(strLower)) {
+            return true;
+        } else if (firstName.toLowerCase().contains(strLower)) {
+            return true;
+        } else if (email.toLowerCase().contains(strLower)) {
+            return true;
+        } else if (gender.toLowerCase().contains(strLower)) {
+            return true;
+        } else if (phones.toLowerCase().contains(strLower)) {
+            return true;
+        }
+
+        return false;
+    }
+}

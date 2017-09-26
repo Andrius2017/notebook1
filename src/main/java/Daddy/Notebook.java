@@ -17,13 +17,27 @@ public class Notebook {
         r.setPhone(phone);
         records.add(r);
 
-}
+
+    }
+
     @Command
-    public void createNote(String text){
+    public void createNote(String text) {
         Note n = new Note();
         n.setText(text);
         records.add(n);
     }
+
+    @Command
+    public List<Record> find(String str) {
+        List<Record> result = new ArrayList<>();
+        for (Record r : records) {
+            if (r.contains(str))
+                result.add(r);
+        }
+        return result;
+    }
+
+
 
 
 
@@ -44,4 +58,6 @@ public class Notebook {
     public List<Record> list(){
         return records;
     }
+
+
 }

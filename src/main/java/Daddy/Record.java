@@ -16,4 +16,8 @@ public abstract class Record {
     }
 
 
+    public abstract boolean contains (String str);
+
+
+
 }
